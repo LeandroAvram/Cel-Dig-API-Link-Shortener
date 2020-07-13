@@ -1,0 +1,38 @@
+{
+  "name": "@core/http-context",
+  "version": "1.0.0",
+  "description": "Middleware de express para gestionar información de contexto de forma cross al servicio",
+  "main": "index.js",
+  "scripts": {
+    "bump": "npm version patch",
+    "test": "./node_modules/jest/bin/jest.js --verbose false --forceExit --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.personal.corp:8443/scm/core/http-context.git"
+  },
+  "keywords": [
+    "http-context",
+    "trackId",
+    "teco",
+    "express",
+    "plugin"
+  ],
+  "author": "manuel.ortiz@fluxit.com.ar",
+  "license": "ISC",
+  "peerDependencies": {
+    "express-http-context": ">=1.2.3"
+  },
+  "dependencies": {
+    "axios": "0.19.2",
+    "express-http-context": ">=1.2.3"
+  },
+  "devDependencies": {
+    "express": "4.17.1",
+    "ghooks": "2.0.4",
+    "jest": "26.0.1",
+    "moxios": "0.4.0",
+    "sinon": "9.0.2",
+    "supertest": "4.0.2"
+  }
+}

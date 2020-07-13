@@ -1,0 +1,62 @@
+pipeline {
+    agent {
+        label {
+            label "docker"
+            //customWorkspace "/bitnami/jenkins/jenkins_home/jobs/ElasticBeanstalk_Pipeline/workspace_ebs/" 
+        }
+    }
+    environment {
+        NODE_ENV = 'local'
+        NPM_AF6= credentials('5fa92142-716e-4f44-9e1d-6cd45629a41a')
+    }
+
+    stages {
+
+        stage('install-dependencies') {
+
+            agent {
+                docker {
+                    label 'docker'
+                    image 'node:erbium-alpine'
+                    args '-u root:root'
+                }           
+            }
+            steps {
+                configFileProvider([configFile(fileId: 'de22cb5c-7aef-436f-8b39-6874f8e505c9', targetLocation: '.npmrc')]) {
+                sh 'npm --version'
+                sh 'npm i -ddd'
+                }
+            }
+        }
+
+        stage('run-test'){
+            agent {
+                docker {
+                    label 'docker'
+                    image 'node:erbium-alpine'
+                    args '-u root:root'
+                } 
+            }
+            steps {
+                sh 'npm run test'
+            }
+        }
+        
+        stage('publish-NPM') {
+            agent {
+                docker {
+                    label 'docker'
+                    image 'node:erbium-alpine'
+                    args '-u root:root'
+                }      
+            }     
+            steps {
+                configFileProvider([configFile(fileId: 'de22cb5c-7aef-436f-8b39-6874f8e505c9', targetLocation: '.npmrc')]) {
+                sh 'npm publish'
+                }
+            }
+        }
+
+
+    } //--end stages
+}

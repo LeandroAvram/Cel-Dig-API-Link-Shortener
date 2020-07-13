@@ -1,0 +1,56 @@
+{
+  "_from": "@core/logger@1.0.3",
+  "_id": "@core/logger@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-0JYRTIT7O3L+i9H4n2tS9Ei/J4g=",
+  "_location": "/@core/logger",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@core/logger@1.0.3",
+    "name": "@core/logger",
+    "escapedName": "@core%2flogger",
+    "scope": "@core",
+    "rawSpec": "1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://plcldbeesapp3:8443/artifactory/api/npm/npm-local/@core/logger/-/@core/logger-1.0.3.tgz",
+  "_shasum": "d096114c84fb3b72fe8bd1f89f6b52f448bf2788",
+  "_spec": "@core/logger@1.0.3",
+  "_where": "F:\\Personal\\CDig\\cel-dig-api-link-shortener",
+  "author": {
+    "name": "manuel.ortiz@fluxit.com.ar"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "optional-require": "1.0.0",
+    "winston": "3.2.1"
+  },
+  "deprecated": false,
+  "description": "Libería de manejo de logs",
+  "keywords": [
+    "logs",
+    "teco",
+    "lib"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "@core/logger",
+  "peerDependencies": {
+    "express-http-context": "^1.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.personal.corp:8443/scm/core/logger.git"
+  },
+  "scripts": {
+    "bump": "npm version patch",
+    "test": ""
+  },
+  "version": "1.0.3"
+}

@@ -1,0 +1,69 @@
+{
+  "_from": "@core/http-context@1.0.3",
+  "_id": "@core/http-context@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-hgC8Fy/ZAiivdgbYVBaj29DqzFU=",
+  "_location": "/@core/http-context",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@core/http-context@1.0.3",
+    "name": "@core/http-context",
+    "escapedName": "@core%2fhttp-context",
+    "scope": "@core",
+    "rawSpec": "1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://plcldbeesapp3:8443/artifactory/api/npm/npm-local/@core/http-context/-/@core/http-context-1.0.3.tgz",
+  "_shasum": "8600bc172fd90228af7606d85416a3dbd0eacc55",
+  "_spec": "@core/http-context@1.0.3",
+  "_where": "F:\\Personal\\CDig\\cel-dig-api-link-shortener",
+  "author": {
+    "name": "manuel.ortiz@fluxit.com.ar"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "uuid": "~8.1.0"
+  },
+  "deprecated": false,
+  "description": "Middleware de express para gestionar información de contexto de forma cross al servicio",
+  "devDependencies": {
+    "express": "4.17.1",
+    "express-http-context": "^1.2.3",
+    "ghooks": "2.0.4",
+    "jest": "26.0.1",
+    "moxios": "0.4.0",
+    "sinon": "9.0.2",
+    "supertest": "4.0.2"
+  },
+  "keywords": [
+    "http-context",
+    "http",
+    "context",
+    "params",
+    "trackId",
+    "teco",
+    "express",
+    "middleware"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "@core/http-context",
+  "peerDependencies": {
+    "express-http-context": "^1.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.personal.corp:8443/scm/core/http-context.git"
+  },
+  "scripts": {
+    "bump": "npm version patch",
+    "test": "./node_modules/jest/bin/jest.js --verbose false --forceExit --detectOpenHandles"
+  },
+  "version": "1.0.3"
+}

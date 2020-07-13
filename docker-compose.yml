@@ -1,0 +1,44 @@
+version: "3"
+services:
+    api-link-shortener:
+        restart: unless-stopped
+        build: 
+            context: ./
+            dockerfile: ./Dockerfile
+        container_name: api-link-shortener
+        environment:
+            - MONGOHOST=link-shortener-mongo
+            - PORT=5000
+            - MONGOPORT=27017
+        ports:
+            - 5000:5000
+        depends_on:
+            - link-shortener-mongo
+
+    link-shortener-mongo:
+        restart: unless-stopped
+        image: mongo:latest
+        container_name: link-shortener-mongo
+        ports:
+            - 27019:27017
+        volumes:
+            - mongo-db:/data/db
+
+    api-link-shortener-proxy:
+        restart: unless-stopped
+        build: 
+            context: ./nginx/
+            dockerfile: ./Dockerfile
+        container_name: api-link-shortener-proxy
+        environment: 
+            - API=api-link-shortener
+            - PORT=5000
+            - DOMAIN=apilinkshortener.xyz
+        ports:
+            - 80:80
+            - 443:443 
+        command: /etc/nginx/run_nginx.sh
+        volumes:
+            - /home/ubuntu/linkshortener/certs:/certs
+volumes:
+    mongo-db:
