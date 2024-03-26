@@ -33,7 +33,7 @@
   "deprecated": false,
   "description": "Middleware de express para gestionar información de contexto de forma cross al servicio",
   "devDependencies": {
-    "express": "4.17.1",
+    "express": "4.19.2",
     "express-http-context": "^1.2.3",
     "ghooks": "2.0.4",
     "jest": "26.0.1",
